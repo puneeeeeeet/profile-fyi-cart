@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import AddToCart from './AddToCart'
 
 const ProductItem = ({product}) => {
   return (
@@ -18,10 +19,10 @@ const ProductItem = ({product}) => {
         <Link href={`/product/${product.id}`}>
           <h2 className="text-lg">{product.name}</h2>
         </Link>
-        <p>
-            ${product.price}
-        </p>
-        <button>Add to cart</button>
+        <p>${product.price}</p>
+        <AddToCart showQty={false} product={product} increasePerClick={true} redirect={false} />
+
+        
       </div>
     </div>
   );
