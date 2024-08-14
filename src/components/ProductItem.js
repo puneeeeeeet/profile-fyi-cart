@@ -6,15 +6,15 @@ import AddToCart from './AddToCart'
 const ProductItem = ({product}) => {
   return (
     <div className="card">
-      <Link href={`/product/${product.id}`}>
+      <div href={`/product/${product.id}`}>
         <Image
-          src={product.image}
+        src={product.image}
           width={400}
           height={400}
           alt={product.name}
           className="rounded shadow object-cover h-96 w-full"
         ></Image>
-      </Link>
+      </div>
       <div className="flex flex-col items-center justify-center p-5">
         <Link href={`/product/${product.id}`}>
           <h2 className="text-lg">{product.name}</h2>
