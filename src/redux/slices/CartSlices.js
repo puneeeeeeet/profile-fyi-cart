@@ -11,7 +11,7 @@ const addDecimals = (num) => {
 };
 
 const cartSlice = createSlice({
-  name: "cart",
+  name: 'cart',
   initialState,
   reducers: {
     addToCart: (state, action) => {
@@ -20,12 +20,12 @@ const cartSlice = createSlice({
       if (existItem) {
         state.cartItems = state.cartItems.map((x) =>
           x.id === existItem.id ? item : x
-        );
+        )
       } else {
         state.cartItems = [...state.cartItems, item];
       }
       state.itemsPrice = addDecimals(
-        state.cartItems.reduce((acc, item) => acc + itemsPrice * item.qty, 0)
+        state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
       );
       state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 100);
       state.totalPrice = addDecimals(

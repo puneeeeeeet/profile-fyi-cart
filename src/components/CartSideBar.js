@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { addToCart } from "@/redux/slices/CartSlices";
+import { addToCart,removeFromCart } from "@/redux/slices/CartSlices";
 import { useSelector,useDispatch } from "react-redux";
 
 export default function CartSideBar() {
