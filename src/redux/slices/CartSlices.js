@@ -36,7 +36,7 @@ const cartSlice = createSlice({
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter((x) => x.id !== action.payload);
       state.itemsPrice = addDecimals(
-      state.cartItems.reduce((acc, item) => acc + itemsPrice * item.qty, 0)
+      state.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
       );
       state.shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 100);
       state.totalPrice = addDecimals(
